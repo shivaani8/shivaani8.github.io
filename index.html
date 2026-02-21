@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- ECharts and ECharts GL -->
     <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts-gl@2.0.9/dist/echarts-gl.min.js"></script>
 </head>
 
 <body>
@@ -81,16 +81,21 @@
             <h3 style="color:black">Poetry</h3>
             <ul>
                 <li>
-                    <img class="photo-round" src="Yesterdays and tomorrows.jpg" alt="Yesterdays and tomorrow photo" width="3%">
-                    <a href="https://www.amazon.com/Yesterdays-Tomorrows-anthology-poems-shades-ebook/dp/B01MZHOAQ7/">Yesterdays and tomorrows</a>
+                    <img class="photo-round" src="Yesterdays and tomorrows.jpg" alt="Yesterdays and tomorrow photo"
+                        width="3%">
+                    <a href="https://www.amazon.com/Yesterdays-Tomorrows-anthology-poems-shades-ebook/dp/B01MZHOAQ7/">Yesterdays
+                        and tomorrows</a>
                 </li>
                 <li>
-                    <img class="photo-round" src="You, my whispered Secret.jpg" alt="You, my whispered secret photo" width="3%">
-                    <a href="https://www.amazon.com/You-whispered-secret-Shivani-Panchmatia-ebook/dp/B07H1WNQL9/">You, my whispered secret</a>
+                    <img class="photo-round" src="You, my whispered Secret.jpg" alt="You, my whispered secret photo"
+                        width="3%">
+                    <a href="https://www.amazon.com/You-whispered-secret-Shivani-Panchmatia-ebook/dp/B07H1WNQL9/">You,
+                        my whispered secret</a>
                 </li>
                 <li>
                     <img class="photo-round" src="A Pinch of Blue.jpg" alt="A Pinch of Blue photo" width="3%">
-                    <a href="https://www.amazon.com/Pinch-Blue-Shivani-Panchmatia-ebook/dp/B08LNYWSYH/">A Pinch of Blue</a>
+                    <a href="https://www.amazon.com/Pinch-Blue-Shivani-Panchmatia-ebook/dp/B08LNYWSYH/">A Pinch of
+                        Blue</a>
                 </li>
             </ul>
 
@@ -98,19 +103,21 @@
             <ul>
                 <li>
                     <img class="photo-round" src="Just a moment.jpg" alt="Just a Moment photo" width="3%">
-                    <a href="https://www.amazon.com/Just-Moment-Shivani-Panchmatia-ebook/dp/B087NMBPT1/">Just a Moment</a>
+                    <a href="https://www.amazon.com/Just-Moment-Shivani-Panchmatia-ebook/dp/B087NMBPT1/">Just a
+                        Moment</a>
                 </li>
             </ul>
 
             <h3 style="color:black">Podcast (Hindi)</h3>
             <p>
                 <img class="photo-round" src="Podcast.jpg" alt="Podcast photo" width="3%">
-                <a href="https://podcasts.apple.com/us/podcast/said-and-the-unsaid-pehla-kadam/id1515518212">My Podcast</a>
+                <a href="https://podcasts.apple.com/us/podcast/said-and-the-unsaid-pehla-kadam/id1515518212">My
+                    Podcast</a>
             </p>
         </section>
 
         <!-- Globe Chart -->
-        <div id="chart" style="width: 100%; height: 600px;"></div>
+        <div id="chart" style="width: 100%; height: 600px; background: #000;"></div>
 
         <br><br>
     </main>
@@ -122,7 +129,7 @@
 
     <script>
         var CDN_PATH = 'https://cdn.jsdelivr.net/npm/';
-        var ROOT_PATH = 'https://echarts.apache.org/examples';
+        var ROOT_PATH = '';
         var myChart = echarts.init(document.getElementById('chart'));
 
         var config = {
@@ -277,4 +284,5 @@
     </script>
 
 </body>
+
 </html>
