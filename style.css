@@ -1,0 +1,57 @@
+header {
+    background-color: rgb(243, 112, 151);
+    border: #613eba;
+    display: flex;
+    justify-content: Centered;
+    align-items: center;
+    order: 2;
+}
+
+h2 {
+    color: #C16E70;
+}
+
+body {
+    color: black;
+}
+
+body {
+    background-color: #D9BDC5;
+}
+
+h1 {
+    color: rgb(75, 53, 5);
+}
+
+footer {
+    background-color: #D9BDC5;
+
+}
+
+.centered {
+    text-align: center;
+    border: #6e4bc7;
+}
+
+.Intro {
+    color: rgb(205, 142, 176);
+    max-width: 500px;
+    text-align: left;
+}
+
+.website-welcome {
+    color: rgb(205, 142, 176);
+    max-width: 500px;
+    display: flex;
+    order: 2;
+}
+
+.photo-round {
+    border-radius: 50%;
+}
+
+.font-style {
+    font-family: 'Tangerine';
+    font-size: 30px;
+
+}
