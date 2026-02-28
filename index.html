@@ -16,6 +16,7 @@
             text-align: center;
             margin: 20px 0;
         }
+
         nav button {
             background-color: navy;
             color: white;
@@ -26,13 +27,16 @@
             border-radius: 5px;
             font-size: 16px;
         }
+
         nav button:hover {
             background-color: #000080;
         }
+
         nav button.active {
             background-color: #000080;
             outline: 2px solid white;
         }
+
         section h2 {
             color: navy;
         }
@@ -50,12 +54,13 @@
             <h3 style="color: black">Welcome to my Website.</h3>
         </div>
     </header>
-
+    <div id="greeting"></div>
     <nav>
         <button onclick="showSection('about', this)">About Me</button>
         <button onclick="showSection('skills', this)">Skills</button>
         <button onclick="showSection('experience', this)">Work Experience</button>
         <button onclick="showSection('hobbies', this)">Hobbies</button>
+        <button onclick="showSection('contact', this)">LinkedIn</button>
     </nav>
 
     <main>
@@ -114,16 +119,21 @@
             <h3 style="color:black">Poetry</h3>
             <ul>
                 <li>
-                    <img class="photo-round" src="Yesterdays and tomorrows.jpg" alt="Yesterdays and tomorrow photo" width="3%">
-                    <a href="https://www.amazon.com/Yesterdays-Tomorrows-anthology-poems-shades-ebook/dp/B01MZHOAQ7/">Yesterdays and tomorrows</a>
+                    <img class="photo-round" src="Yesterdays and tomorrows.jpg" alt="Yesterdays and tomorrow photo"
+                        width="3%">
+                    <a href="https://www.amazon.com/Yesterdays-Tomorrows-anthology-poems-shades-ebook/dp/B01MZHOAQ7/">Yesterdays
+                        and tomorrows</a>
                 </li>
                 <li>
-                    <img class="photo-round" src="You, my whispered Secret.jpg" alt="You, my whispered secret photo" width="3%">
-                    <a href="https://www.amazon.com/You-whispered-secret-Shivani-Panchmatia-ebook/dp/B07H1WNQL9/">You, my whispered secret</a>
+                    <img class="photo-round" src="You, my whispered Secret.jpg" alt="You, my whispered secret photo"
+                        width="3%">
+                    <a href="https://www.amazon.com/You-whispered-secret-Shivani-Panchmatia-ebook/dp/B07H1WNQL9/">You,
+                        my whispered secret</a>
                 </li>
                 <li>
                     <img class="photo-round" src="A Pinch of Blue.jpg" alt="A Pinch of Blue photo" width="3%">
-                    <a href="https://www.amazon.com/Pinch-Blue-Shivani-Panchmatia-ebook/dp/B08LNYWSYH/">A Pinch of Blue</a>
+                    <a href="https://www.amazon.com/Pinch-Blue-Shivani-Panchmatia-ebook/dp/B08LNYWSYH/">A Pinch of
+                        Blue</a>
                 </li>
             </ul>
 
@@ -131,14 +141,24 @@
             <ul>
                 <li>
                     <img class="photo-round" src="Just a moment.jpg" alt="Just a Moment photo" width="3%">
-                    <a href="https://www.amazon.com/Just-Moment-Shivani-Panchmatia-ebook/dp/B087NMBPT1/">Just a Moment</a>
+                    <a href="https://www.amazon.com/Just-Moment-Shivani-Panchmatia-ebook/dp/B087NMBPT1/">Just a
+                        Moment</a>
                 </li>
             </ul>
 
             <h3 style="color:black">Podcast (Hindi)</h3>
             <p>
                 <img class="photo-round" src="Podcast.jpg" alt="Podcast photo" width="3%">
-                <a href="https://podcasts.apple.com/us/podcast/said-and-the-unsaid-pehla-kadam/id1515518212">My Podcast</a>
+                <a href="https://podcasts.apple.com/us/podcast/said-and-the-unsaid-pehla-kadam/id1515518212">My
+                    Podcast</a>
+            </p>
+        </section>
+
+        <section id="contact" style="display:none;">
+            <h2>LinkedIn</h2>
+            <p>
+                <img src="LinkedIn_icon.png" alt="LinkedIn profile" width="50">
+                <a href="https://www.linkedin.com/in/shivani-panchmatia-5b5ba859/">Connect with me on LinkedIn</a>
             </p>
         </section>
 
@@ -148,22 +168,14 @@
         <br><br>
     </main>
 
-    <footer class="left">
-        <img src="LinkedIn_icon.png" alt="LinkedIn profile" width="50">
-        <a href="https://www.linkedin.com/in/shivani-panchmatia-5b5ba859/">Connect with me on LinkedIn</a>
-    </footer>
-
     <script>
         function showSection(id, btn) {
-            // Hide all sections
-            document.querySelectorAll('section').forEach(function(s) {
+            document.querySelectorAll('section').forEach(function (s) {
                 s.style.display = 'none';
             });
-            // Remove active class from all buttons
-            document.querySelectorAll('nav button').forEach(function(b) {
+            document.querySelectorAll('nav button').forEach(function (b) {
                 b.classList.remove('active');
             });
-            // Show clicked section and mark button active
             document.getElementById(id).style.display = 'block';
             btn.classList.add('active');
         }
@@ -322,6 +334,7 @@
             }
         });
     </script>
-
+    <script src="index.js"></script>
 </body>
+
 </html>
