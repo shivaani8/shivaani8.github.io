@@ -11,6 +11,32 @@
     <!-- ECharts and ECharts GL -->
     <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/echarts-gl@2.0.9/dist/echarts-gl.min.js"></script>
+    <style>
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+        nav button {
+            background-color: navy;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        nav button:hover {
+            background-color: #000080;
+        }
+        nav button.active {
+            background-color: #000080;
+            outline: 2px solid white;
+        }
+        section h2 {
+            color: navy;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,14 +45,21 @@
         <img class="photo-round" src="Shivani1.jpg" alt="Shivani Photo" width="20%">
         <br>
         <div class="Intro">
-            <h1 class="font-style" style="color: maroon">Shivani Panchmatia</h1>
+            <h1 class="font-style" style="color: navy">Shivani Panchmatia</h1>
             <br>
             <h3 style="color: black">Welcome to my Website.</h3>
         </div>
     </header>
 
+    <nav>
+        <button onclick="showSection('about', this)">About Me</button>
+        <button onclick="showSection('skills', this)">Skills</button>
+        <button onclick="showSection('experience', this)">Work Experience</button>
+        <button onclick="showSection('hobbies', this)">Hobbies</button>
+    </nav>
+
     <main>
-        <section>
+        <section id="about" style="display:none;">
             <h2>About Me</h2>
             <p>My name is Shivani Panchmatia. I'm someone who believes life is best lived with curiosity and creativity.
                 When I'm not exploring the world of coding (and occasionally arguing with my laptop about why my code
@@ -39,7 +72,7 @@
                 stories into something that (hopefully!) makes people think, smile, or feel understood.</p>
         </section>
 
-        <section>
+        <section id="skills" style="display:none;">
             <h2>Skills</h2>
             <ul>
                 <li>Strong analytical and problem-solving abilities</li>
@@ -52,7 +85,7 @@
             </ul>
         </section>
 
-        <section>
+        <section id="experience" style="display:none;">
             <h2>Work Experience</h2>
             <p>With over 23 years of experience across Administration, Sales & Marketing, Human Resources, Customer
                 Experience, and Coaching, I know how to get things done—and how to truly understand people.
@@ -67,7 +100,7 @@
             </p>
         </section>
 
-        <section>
+        <section id="hobbies" style="display:none;">
             <h2>Hobbies</h2>
             <h3>Amazon Publications</h3>
             <p>
@@ -81,21 +114,16 @@
             <h3 style="color:black">Poetry</h3>
             <ul>
                 <li>
-                    <img class="photo-round" src="Yesterdays and tomorrows.jpg" alt="Yesterdays and tomorrow photo"
-                        width="3%">
-                    <a href="https://www.amazon.com/Yesterdays-Tomorrows-anthology-poems-shades-ebook/dp/B01MZHOAQ7/">Yesterdays
-                        and tomorrows</a>
+                    <img class="photo-round" src="Yesterdays and tomorrows.jpg" alt="Yesterdays and tomorrow photo" width="3%">
+                    <a href="https://www.amazon.com/Yesterdays-Tomorrows-anthology-poems-shades-ebook/dp/B01MZHOAQ7/">Yesterdays and tomorrows</a>
                 </li>
                 <li>
-                    <img class="photo-round" src="You, my whispered Secret.jpg" alt="You, my whispered secret photo"
-                        width="3%">
-                    <a href="https://www.amazon.com/You-whispered-secret-Shivani-Panchmatia-ebook/dp/B07H1WNQL9/">You,
-                        my whispered secret</a>
+                    <img class="photo-round" src="You, my whispered Secret.jpg" alt="You, my whispered secret photo" width="3%">
+                    <a href="https://www.amazon.com/You-whispered-secret-Shivani-Panchmatia-ebook/dp/B07H1WNQL9/">You, my whispered secret</a>
                 </li>
                 <li>
                     <img class="photo-round" src="A Pinch of Blue.jpg" alt="A Pinch of Blue photo" width="3%">
-                    <a href="https://www.amazon.com/Pinch-Blue-Shivani-Panchmatia-ebook/dp/B08LNYWSYH/">A Pinch of
-                        Blue</a>
+                    <a href="https://www.amazon.com/Pinch-Blue-Shivani-Panchmatia-ebook/dp/B08LNYWSYH/">A Pinch of Blue</a>
                 </li>
             </ul>
 
@@ -103,16 +131,14 @@
             <ul>
                 <li>
                     <img class="photo-round" src="Just a moment.jpg" alt="Just a Moment photo" width="3%">
-                    <a href="https://www.amazon.com/Just-Moment-Shivani-Panchmatia-ebook/dp/B087NMBPT1/">Just a
-                        Moment</a>
+                    <a href="https://www.amazon.com/Just-Moment-Shivani-Panchmatia-ebook/dp/B087NMBPT1/">Just a Moment</a>
                 </li>
             </ul>
 
             <h3 style="color:black">Podcast (Hindi)</h3>
             <p>
                 <img class="photo-round" src="Podcast.jpg" alt="Podcast photo" width="3%">
-                <a href="https://podcasts.apple.com/us/podcast/said-and-the-unsaid-pehla-kadam/id1515518212">My
-                    Podcast</a>
+                <a href="https://podcasts.apple.com/us/podcast/said-and-the-unsaid-pehla-kadam/id1515518212">My Podcast</a>
             </p>
         </section>
 
@@ -128,8 +154,22 @@
     </footer>
 
     <script>
+        function showSection(id, btn) {
+            // Hide all sections
+            document.querySelectorAll('section').forEach(function(s) {
+                s.style.display = 'none';
+            });
+            // Remove active class from all buttons
+            document.querySelectorAll('nav button').forEach(function(b) {
+                b.classList.remove('active');
+            });
+            // Show clicked section and mark button active
+            document.getElementById(id).style.display = 'block';
+            btn.classList.add('active');
+        }
+
+        // Globe setup
         var CDN_PATH = 'https://cdn.jsdelivr.net/npm/';
-        var ROOT_PATH = '';
         var myChart = echarts.init(document.getElementById('chart'));
 
         var config = {
@@ -153,7 +193,7 @@
             $.getScript(CDN_PATH + 'd3-geo@2.0.1/dist/d3-geo.js'),
             $.getScript(CDN_PATH + 'd3-timer@2.0.0/dist/d3-timer.js')
         ).done(function () {
-            image(ROOT_PATH + '/data-gl/asset/bathymetry_bw_composite_4k.jpg').then(
+            image('data-gl/asset/bathymetry_bw_composite_4k.jpg').then(
                 function (image) {
                     var m = image.height,
                         n = image.width,
@@ -242,8 +282,8 @@
                 myChart.setOption({
                     backgroundColor: '#000',
                     globe: {
-                        environment: ROOT_PATH + '/data-gl/asset/starfield.jpg',
-                        heightTexture: ROOT_PATH + '/data-gl/asset/bathymetry_bw_composite_4k.jpg',
+                        environment: 'data-gl/asset/starfield.jpg',
+                        heightTexture: 'data-gl/asset/bathymetry_bw_composite_4k.jpg',
                         displacementScale: 0.05,
                         displacementQuality: 'high',
                         baseColor: '#000',
@@ -260,7 +300,7 @@
                             ambient: { intensity: 0 },
                             main: { intensity: 0.1, shadow: false },
                             ambientCubemap: {
-                                texture: ROOT_PATH + '/data-gl/asset/lake.hdr',
+                                texture: 'data-gl/asset/lake.hdr',
                                 exposure: 1,
                                 diffuseIntensity: 0.5,
                                 specularIntensity: 2
@@ -284,5 +324,4 @@
     </script>
 
 </body>
-
 </html>
